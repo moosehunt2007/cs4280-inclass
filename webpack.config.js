@@ -3,7 +3,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    main: './src/javascripts/main.js'
+    main: './src/javascripts/main.js',
+    week03: './src/javascripts/week03.js',
+    week02: './src/javascripts/week02.js',
+    week01: './src/javascripts/week01.js'
   },
   mode: 'development',
   devtool: 'inline-source-map',

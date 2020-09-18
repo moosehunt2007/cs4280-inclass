@@ -8,4 +8,9 @@ let std_name = "Your name goes here"
 document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 
 //Then: comes everything else
-// TODO
+// Shaders
+import vs_script from "../shaders/vertex.glsl"
+import fs_script from "../shaders/fragment.glsl"
+
+// JavaScript
+
