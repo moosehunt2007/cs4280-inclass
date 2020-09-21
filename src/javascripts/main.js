@@ -14,8 +14,8 @@ import fs_script from "../shaders/fragment.glsl"
 
 // JavaScript
 import {scribble, sierpinski} from './week05'
-// scribble()
-sierpinski()
+scribble()
+// sierpinski()
 
 import { WebGLHelper } from './webgl_helper'
 
