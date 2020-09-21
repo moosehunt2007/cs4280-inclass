@@ -4,7 +4,7 @@ require.context('../images/', true, /\.(gif|jpg|png|svg|eot|ttf|woff|woff2)$/i)
 require.context('../stylesheets/', true, /\.(css|scss)$/i)
 
 // First: Set up your name
-let std_name = "Your name goes here"
+let std_name = "William 'Chris' Hunt"
 document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 
 //Then: comes everything else
@@ -13,4 +13,9 @@ import vs_script from "../shaders/vertex.glsl"
 import fs_script from "../shaders/fragment.glsl"
 
 // JavaScript
+import {scribble, sierpinski} from './week05'
+// scribble()
+sierpinski()
+
+import { WebGLHelper } from './webgl_helper'
 
