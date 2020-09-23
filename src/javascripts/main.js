@@ -13,9 +13,8 @@ import vs_script from "../shaders/vertex.glsl"
 import fs_script from "../shaders/fragment.glsl"
 
 // JavaScript
-import {scribble, sierpinski} from './week05'
-scribble()
-// sierpinski()
+import {scribble, sierpinski, displayMultiProgram} from './week05'
+displayMultiProgram()
 
 import { WebGLHelper } from './webgl_helper'
 
