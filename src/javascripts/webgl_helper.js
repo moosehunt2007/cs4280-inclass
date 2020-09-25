@@ -13,8 +13,8 @@ export class WebGLHelper {
   static initWebGL(canvas) {
     canvas.width = canvas.getClientRects()[0].width;
     canvas.height = canvas.getClientRects()[0].height;
-    
-    return canvas.getContext("webgl2") ||  alert("Unable to initialize WebGL; your browser may not support it.")
+
+    return canvas.getContext("webgl2") || alert("Unable to initialize WebGL; your browser may not support it.")
   }
 
   /**

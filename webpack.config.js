@@ -38,7 +38,7 @@ module.exports = {
         test: /\.(html|json|txt|dat|gif|jpg|png|svg|eot|ttf|woff|woff2)$/i,
         use: [{
           loader: 'file-loader',
-          options: { 
+          options: {
             name: '[name].[ext]',
             outputPath: (url, resourcePath, context) => {
               return resourcePath.includes(`${path.sep}images${path.sep}`) ? `images/${url}` : url

@@ -30,7 +30,7 @@ let ln = 'Doe';
 let name = `My name is ${fn} ${ln}.`
 
 
-let numbers = [2,4,5, 12, 34, 67,9,18]
+let numbers = [2, 4, 5, 12, 34, 67, 9, 18]
 console.log(numbers.length)
 
 console.log(numbers.map(
@@ -40,16 +40,16 @@ console.log(numbers.map(
 numbers.push(22)
 numbers.unshift(11)
 
-for(let i = 0; i < numbers.length; i++){
+for (let i = 0; i < numbers.length; i++) {
   console.log(numbers[i] * 3)
 }
 
 
-for(let n of numbers){
+for (let n of numbers) {
   console.log(n * 3)
 }
 
-for(let i in numbers){
+for (let i in numbers) {
   console.log(numbers[i] * 3)
 }
 
@@ -60,20 +60,20 @@ let self = {
 }
 
 
-for(let p in self){
+for (let p in self) {
   console.log(`${p}: ${self[p]}`)
 }
 console.log(self.fn)
 console.log(numbers)
 
 
-function getMax(x, y){
-  return Math.max(x,y)
+function getMax(x, y) {
+  return Math.max(x, y)
 }
 
-console.log(getMax(14,11))
+console.log(getMax(14, 11))
 
-const gMax = function(x, y){
+const gMax = function (x, y) {
   return Math.max(x, y)
 }
 
@@ -97,33 +97,33 @@ let da = [
 
 d3.select('article')
   .append('svg')
-  .attr('width',500)
+  .attr('width', 500)
   .attr('height', 600)
   .style('background', '#eee')
 
 d3.select('svg').selectAll('rect')
-   .data(da)
-   .enter()
-   .append('rect')
-   .attr('x', 0)
-   .attr('y', function(d, i){
-     return i * 30
-   })
-   .attr('height', 15)
-   .attr('width', (d)=>{
-     return d[0] * 3
-   })
+  .data(da)
+  .enter()
+  .append('rect')
+  .attr('x', 0)
+  .attr('y', function (d, i) {
+    return i * 30
+  })
+  .attr('height', 15)
+  .attr('width', (d) => {
+    return d[0] * 3
+  })
 
- d3.select('svg').selectAll('text') 
-   .data(da)
-   .enter()
-   .append('text')
-   .attr('x', function(d){
-     return d[0] * 3 + 10
-   })
-   .attr('y', function(d, i){
-     return i * 30 + 16
-   })
-   .text(function(d){
-     return d[1]
-   })
+d3.select('svg').selectAll('text')
+  .data(da)
+  .enter()
+  .append('text')
+  .attr('x', function (d) {
+    return d[0] * 3 + 10
+  })
+  .attr('y', function (d, i) {
+    return i * 30 + 16
+  })
+  .text(function (d) {
+    return d[1]
+  })

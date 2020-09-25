@@ -1,6 +1,7 @@
 import { WebGLHelper } from './webgl_helper'
 import * as dat from 'dat.gui'
 
+
 export function displayMultiprogram() {
   let canvas = document.querySelector("#webgl-scene")
   let gl = WebGLHelper.initWebGL(canvas)
@@ -17,6 +18,7 @@ export function displayMultiprogram() {
       vColor = vec4(color, 1.0);
     }  
   `
+
   const fs_script = `#version 300 es
     precision mediump float;
     in vec4 vColor;
@@ -25,7 +27,7 @@ export function displayMultiprogram() {
       fragColor = vColor; 
     }
   `
-  
+
   let objects = [{
     name: "triangle",
     vs_shader: vs_script,
@@ -330,4 +332,5 @@ export function scribble() {
       gui.updateDisplay()
     }
   }
+
 }
