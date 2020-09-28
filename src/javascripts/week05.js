@@ -1,7 +1,6 @@
 import { WebGLHelper } from './webgl_helper'
 import * as dat from 'dat.gui'
 
-
 export function displayMultiprogram() {
   let canvas = document.querySelector("#webgl-scene")
   let gl = WebGLHelper.initWebGL(canvas)
@@ -76,7 +75,6 @@ export function displayMultiprogram() {
       primitive: gl.TRIANGLE_FAN
     }
   }]
-
 
   for (let o of objects) {
     o.program = WebGLHelper.initShaders(gl, o.vs_shader, o.fs_shader)

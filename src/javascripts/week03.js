@@ -39,7 +39,6 @@ export function displayPrimitivesAtClick(vs_script, fs_script) {
 
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW)
     gl.drawArrays(gl.TRIANGLES, 0, vertices.length / 3)
-
   }
 
   WebGLHelper.clear(gl, [1.0, 1.0, 1.0, 1.0])
@@ -89,9 +88,6 @@ export function displayPointAtClick(vs_script, fs_script) {
   gl.enable(gl.DEPTH_TEST)
   gl.depthFunc(gl.LEQUAL)
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
-
-
-
 }
 
 export function displayTriangle(vs_script, fs_script) {
@@ -117,8 +113,6 @@ export function displayTriangle(vs_script, fs_script) {
   gl.linkProgram(program)
 
   gl.useProgram(program)
-
-
 
   // Sending coordinates to GPU
   let coords = gl.getAttribLocation(program, "coordinates")
@@ -167,13 +161,11 @@ export function displayPoint(vs_script, fs_script) {
   let coords = gl.getAttribLocation(program, "coordinates")
   gl.vertexAttrib3f(coords, .8, .8, .0)
 
-
   // Clear the canvas
   gl.clearColor(1.0, 1.0, 1.0, 1.0)
   gl.enable(gl.DEPTH_TEST)
   gl.depthFunc(gl.LEQUAL)
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
-
 
   gl.drawArrays(gl.POINTS, 0, 1)
 }
