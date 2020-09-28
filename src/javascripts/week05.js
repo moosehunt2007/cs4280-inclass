@@ -303,7 +303,6 @@ export function scribble() {
 
       gl.drawArrays(controls.primitive, 0, vertices.length / 3)
     }
-
   }
 
   WebGLHelper.clear(gl, [1.0, 1.0, 1.0, 1.0])
@@ -330,5 +329,4 @@ export function scribble() {
       gui.updateDisplay()
     }
   }
-
 }

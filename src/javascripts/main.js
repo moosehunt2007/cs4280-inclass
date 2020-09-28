@@ -12,4 +12,7 @@ import fs_script from "../shaders/fragment-color.glsl"
 //  import { scribble, displayMultiprogram } from './week05'
 //  displayMultiprogram()
 
-import { displayColoredTriangles } from './Activity3'
+// import { displayColoredTriangles } from './Activity3'
+
+import {displayCube} from './week06'
+displayCube()
