@@ -13,7 +13,7 @@ import vs_script from "../shaders/vertex-color.glsl"
 import fs_script from "../shaders/fragment-color.glsl"
 import { WebGLHelper } from './webgl_helper'
 
-displayColoredTriangles(vs_script, fs_script)
+// displayColoredTriangles(vs_script, fs_script)
 
 export function displayColoredTriangles(vs_script, fs_script) {
     let canvas = document.querySelector("#webgl-scene")
@@ -40,21 +40,4 @@ export function displayColoredTriangles(vs_script, fs_script) {
     }])
 
     gl.drawArrays(gl.TRIANGLES, 0, 15)
-
-    // WebGLHelper.initBuffers(gl, program, [{
-    //     name: 'coordinates',
-    //     size: 3,
-    //     data: [0, 0, 0, .5, -.5, 0, -.5, -.5, 0,
-    //         -.3, .5, 0, .5, .5, 0, -0.3, .5, 0]
-    // }, {
-    //     name: 'color',
-    //     size: 3,
-    //     data: [
-    //         0.254, 0.790, .0237, .254, .790, .0237, .254, .790, .0237]
-    // }])
-
-    // gl.drawArrays(gl.TRIANGLES, 1, 15)
-
-    // -.3, .5, 0, .5, .5, 0, -0.3, .5, 0,
-    // 0, 0, 0, 0, 0, 0, 0, 0, 0,
 }

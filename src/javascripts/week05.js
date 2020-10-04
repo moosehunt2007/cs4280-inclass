@@ -222,7 +222,6 @@ export function sierpinski() {
   }
 
   redraw()
-
 }
 
 export function scribble() {

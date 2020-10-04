@@ -2,32 +2,33 @@ import { WebGLHelper } from './webgl_helper'
 import * as dat from 'dat.gui'
 import * as THREE from 'three'
 
-class CUBE {
+class Cube {
     constructor() {
         this.vertices = [
             -.5, -.5, .5, // 0
             .5, -.5, .5, // 1
             .5, .5, .5, // 2
-            -.5, .5, .5, // 3            
+            -.5, .5, .5, // 3
             -.5, -.5, -.5, // 4
             .5, -.5, -.5, // 5
             .5, .5, -.5, // 6
-            -.5, .5, -.5 // 7
+            -.5, .5, -.5  // 7
         ]
+
         this.indices = []
 
         this.face(0, 1, 2, 3) // front
         this.face(5, 4, 7, 6) // back
         this.face(3, 2, 6, 7) // top
         this.face(1, 0, 4, 5) // bottom
-        this.face(4, 0, 3, 7) // left
-        this.face(1, 5, 6, 2) // right            
+        this.face(4, 0, 7, 7) // left
+        this.face(1, 5, 6, 2) // right
 
         this.v_out = []
         for (let i of this.indices) {
-            this.v_out.push(this.vertices[3] * i,
-                this.vertices[3] * i + 1,
-                this.vertices[3] * i + 2)
+            this.v_out.push(this.vertices[3 * i],
+                this.vertices[3 * i + 1],
+                this.vertices[3 * i + 2])
         }
 
         this.colors = [
@@ -40,19 +41,19 @@ class CUBE {
         ]
 
         this.c_out = []
-
         for (let c of this.colors) {
             for (let i = 0; i < 6; i++) {
-                this.c_out.push(c[0], c[2], c[2])
+                this.c_out.push(c[0], c[1], c[2])
             }
         }
     }
+
     face(a, b, c, d) {
         this.indices.push(a, b, c)
         this.indices.push(a, c, d)
     }
-
 }
+
 
 export function displayCube() {
     const vs_script = `#version 300 es
@@ -80,7 +81,7 @@ export function displayCube() {
     let program = WebGLHelper.initShaders(gl, vs_script, fs_script)
     gl.useProgram(program)
 
-    let cube = new CUBE();
+    let cube = new Cube()
 
     let buffers = WebGLHelper.initBuffers(gl, program, [{
         name: 'coordinates',
@@ -94,39 +95,33 @@ export function displayCube() {
 
     let transformByLoc = gl.getUniformLocation(program, 'transformBy')
 
-    // button for value
     let controls = {
-        axis: 2,
+        axis: 1,
         theta: 30
     }
 
-    // actual value
-    let theta = [0, 0, 0]
-
+    let theta = [20, 17, 45]
     function animate() {
         theta[controls.axis] += 2
-        
+
         let rx = new THREE.Matrix4().makeRotationX(theta[0] * Math.PI / 180)
         let ry = new THREE.Matrix4().makeRotationX(theta[1] * Math.PI / 180)
         let rz = new THREE.Matrix4().makeRotationX(theta[2] * Math.PI / 180)
 
         let ryz = new THREE.Matrix4().multiplyMatrices(ry, rz)
         let rxyz = new THREE.Matrix4().multiplyMatrices(rx, ryz)
-       
+
         WebGLHelper.clear(gl, [1, 1, 1, 1])
-
-        gl.uniformMatrix4fv(transformByLoc, false, rxyz)          
-
-        WebGLHelper.clear(gl, [1.0, 1.0, 1.0, 1.0])
+        gl.uniformMatrix4fv(transformByLoc, false, rxyz.elements)
 
         gl.drawArrays(gl.TRIANGLES, 0, cube.v_out.length / 3)
 
         requestAnimationFrame(animate)
     }
-    
+
     animate()
 
     let gui = new dat.GUI()
     document.querySelector('aside').appendChild(gui.domElement)
-    gui.add(controls, 'axis', {x:0, y: 1, z: 2})  
+    gui.add(controls, 'axis', { x: 0, y: 1, z: 2 })
 }
