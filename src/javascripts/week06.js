@@ -2,9 +2,7 @@ import { WebGLHelper } from './webgl_helper'
 import * as dat from 'dat.gui'
 import * as THREE from 'three'
 
-<<<<<<< HEAD
-class Cube {
-=======
+// Pyramid Week 06
 class Pyramid {
     constructor() {
         this.vertices = [
@@ -46,8 +44,6 @@ class Pyramid {
     }
 }
 
-
-// Cube on Wednesday week 06
 export function displayPyramid() {
     const vs_script = `#version 300 es
       in vec3 coordinates;
@@ -124,8 +120,9 @@ export function displayPyramid() {
     gui.add(controls, 'axis', { x: 0, y: 1, z: 2 })
 }
 
+// CubeIndexed Week 06
 class CubeIndexed {
->>>>>>> 971a697581deb064f18262b27ea9513f68070de1
+
     constructor() {
         this.vertices = [
             -.5, -.5, .5, // 0
@@ -144,9 +141,6 @@ class CubeIndexed {
         this.face(5, 4, 7, 6) // back
         this.face(3, 2, 6, 7) // top
         this.face(1, 0, 4, 5) // bottom
-<<<<<<< HEAD
-        this.face(4, 0, 7, 7) // left
-=======
         this.face(4, 0, 3, 7) // left
         this.face(1, 5, 6, 2) // right
 
@@ -274,7 +268,6 @@ class Cube {
         this.face(3, 2, 6, 7) // top
         this.face(1, 0, 4, 5) // bottom
         this.face(4, 0, 3, 7) // left
->>>>>>> 971a697581deb064f18262b27ea9513f68070de1
         this.face(1, 5, 6, 2) // right
 
         this.v_out = []
@@ -353,16 +346,9 @@ export function displayCube() {
         theta: 30
     }
 
-<<<<<<< HEAD
-    let theta = [20, 17, 45]
-    function animate() {
-        theta[controls.axis] += 2
-=======
     let theta = [0, 0, 0]
     function animate() {
         theta[controls.axis] += .9
->>>>>>> 971a697581deb064f18262b27ea9513f68070de1
-
         let rx = new THREE.Matrix4().makeRotationX(theta[0] * Math.PI / 180)
         let ry = new THREE.Matrix4().makeRotationY(theta[1] * Math.PI / 180)
         let rz = new THREE.Matrix4().makeRotationZ(theta[2] * Math.PI / 180)
@@ -383,9 +369,5 @@ export function displayCube() {
     let gui = new dat.GUI()
     document.querySelector('aside').appendChild(gui.domElement)
     gui.add(controls, 'axis', { x: 0, y: 1, z: 2 })
-<<<<<<< HEAD
-}
-=======
-}
 
->>>>>>> 971a697581deb064f18262b27ea9513f68070de1
+}

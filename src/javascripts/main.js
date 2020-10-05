@@ -13,12 +13,14 @@ import vs_script from "../shaders/vertex-color.glsl"
 import fs_script from "../shaders/fragment-color.glsl"
 
 // JavaScript
-<<<<<<< HEAD
-import { displayCube } from './week06'
-displayCube()
+import { displayCube, displayCubeIndexed, displayPyramid } from './week06'
+// displayCubeIndexed()
 
+import {displayMultipleCubes} from './Week07'
+// displayMultipleCubes()
 
-
+import {displaySphere} from './Week07'
+displaySphere()
 
 
 
@@ -54,11 +56,4 @@ export function displayColoredTriangles(vs_script, fs_script) {
 
     WebGLHelper.clear(gl, [1.0, 1.0, 1.0, 1.0])
     gl.drawArrays(gl.TRIANGLES, 0, 3)
-
 }
-=======
-import { displayCube, displayCubeIndexed, displayPyramid } from './week06'
-displayCubeIndexed()
-
-
->>>>>>> 971a697581deb064f18262b27ea9513f68070de1
