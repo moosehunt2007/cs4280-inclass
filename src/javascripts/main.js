@@ -4,7 +4,7 @@ require.context('../images/', true, /\.(gif|jpg|png|svg|eot|ttf|woff|woff2)$/i)
 require.context('../stylesheets/', true, /\.(css|scss)$/i)
 
 // First: Set up your name
-let std_name = "Your name goes here"
+let std_name = "William 'Chris' Hunt"
 document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 
 //Then: comes everything else
@@ -13,14 +13,14 @@ import vs_script from "../shaders/vertex-color.glsl"
 import fs_script from "../shaders/fragment-color.glsl"
 
 // JavaScript
-import { displayCube, displayCubeIndexed, displayPyramid } from './week06'
+// import { displayCube, displayCubeIndexed, displayPyramid } from './week06'
 // displayCubeIndexed()
 
-import {displayMultipleCubes} from './Week07'
+// import {displayMultipleCubes} from './Week07'
 // displayMultipleCubes()
 
-import {displaySphere} from './Week07'
-displaySphere()
+import {displaySphere, displayCube} from './Week07'
+displayCube()
 
 
 

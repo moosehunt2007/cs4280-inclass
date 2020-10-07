@@ -64,7 +64,6 @@ export function displayMultiprogram() {
       for (let i = 0; i <= pcount; i++) {
         points.push(r * Math.cos(ang * i) + .45, r * Math.sin(ang * i) - .45, 0)
       }
-
       return points
     })(),
     controls: {
@@ -139,7 +138,6 @@ export function displayMultiprogram() {
     })
     f.open()
   }
-
 }
 
 export function sierpinski() {

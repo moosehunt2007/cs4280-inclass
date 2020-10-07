@@ -70,17 +70,17 @@ export function displayPyramid() {
     let program = WebGLHelper.initShaders(gl, vs_script, fs_script)
     gl.useProgram(program)
 
-    let cube = new Pyramid()
+    let pyramid = new Pyramid()
 
     let buffers = WebGLHelper.initBuffers(gl, program, [{
         name: 'coordinates',
         size: 3,
-        data: cube.vertices,
-        indices: cube.indices
+        data: pyramid.vertices,
+        indices: pyramid.indices
     }, {
         name: 'color',
         size: 3,
-        data: cube.colors
+        data: pyramid.colors
     }])
 
     let transformByLoc = gl.getUniformLocation(program, 'transformBy')
