@@ -13,20 +13,23 @@ import vs_script from "../shaders/vertex-color.glsl"
 import fs_script from "../shaders/fragment-color.glsl"
 
 // JavaScript
+// import {scribble} from './week05'
+// scribble()
+
 // import { displayCube, displayCubeIndexed, displayPyramid } from './week06'
 // displayCubeIndexed()
 
 // import {displayMultipleCubes} from './Week07'
 // displayMultipleCubes()
 
-import {displaySphere, displayCube} from './Week07'
-displayCube()
+// import {displaySphere, displayCube} from './Week07'
+// displayCube()
 
+// import {displayCube} from './Activity5'
+// displayCube()
 
-
-
-
-
+import {displayThreeHelloWorld} from './Week08'
+displayThreeHelloWorld()
 
 
 
