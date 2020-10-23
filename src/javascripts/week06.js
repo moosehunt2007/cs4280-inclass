@@ -369,5 +369,4 @@ export function displayCube() {
     let gui = new dat.GUI()
     document.querySelector('aside').appendChild(gui.domElement)
     gui.add(controls, 'axis', { x: 0, y: 1, z: 2 })
-
 }

@@ -24,14 +24,18 @@ import fs_script from "../shaders/fragment-color.glsl"
 
 // import {displaySphere, displayCube} from './Week07'
 // displayCube()
+// displaySphere()
 
 // import {displayCube} from './Activity5'
 // displayCube()
 
-import {displayThreeHelloWorld, displayAnimatedCube, displayCubeScene} from './Week08'
+// import {displayThreeHelloWorld, displayAnimatedCube, displayCubeScene} from './Week08'
 // displayThreeHelloWorld()
 // displayAnimatedCube()
-displayCubeScene()
+// displayCubeScene()
+
+import { displayMeshes } from './week09'
+displayMeshes()
 
 
 

@@ -17,6 +17,7 @@ export function displayMultiprogram() {
       vColor = vec4(color, 1.0);
     }  
   `
+  
 
   const fs_script = `#version 300 es
     precision mediump float;

@@ -108,7 +108,6 @@ export function displayCube() {
 
     gl.drawArrays(gl.TRIANGLES, 0, cube.v_out.length / 3)
 
-
     s = new THREE.Matrix4().makeScale(1, .2, 1)
     let q = getQuaternionTransformation(controls)
     gl.uniformMatrix4fv(transformByLoc, false, new THREE.Matrix4().multiplyMatrices(q, s).elements)
@@ -326,57 +325,6 @@ export function displayMultipleCubes() {
   sides.addColor(controls, 'right')
 
   sides.open()
-
-
-
-  // Function for setting color of cube
-
-  function setNewColor() {
-
-    let newColors = cube.colors
-
-
-
-    newColors[0] = WebGLHelper.getColorFromHex(controls.front)
-
-    newColors[1] = WebGLHelper.getColorFromHex(controls.back)
-
-    newColors[2] = WebGLHelper.getColorFromHex(controls.top)
-
-    newColors[3] = WebGLHelper.getColorFromHex(controls.bottom)
-
-    newColors[4] = WebGLHelper.getColorFromHex(controls.left)
-
-    newColors[5] = WebGLHelper.getColorFromHex(controls.right)
-
-
-
-    cube.colors = newColors
-
-    cube.fixColors()
-
-
-
-    WebGLHelper.initBuffers(gl, program, [{
-
-      name: 'coordinates',
-
-      size: 3,
-
-      data: cube.v_out
-
-    }, {
-
-      name: 'color',
-
-      size: 3,
-
-      data: cube.c_out
-
-    }])
-
-  }
-
 }
 
 
@@ -395,8 +343,6 @@ export function displaySphere() {
     } 
   `
 
-
-
   const fs_script = `#version 300 es
     precision mediump float;
     in vec4 vColor;
@@ -407,109 +353,54 @@ export function displaySphere() {
   `
 
   let canvas = document.querySelector("#webgl-scene")
-
   let gl = WebGLHelper.initWebGL(canvas)
-
-
-
   let program = WebGLHelper.initShaders(gl, vs_script, fs_script)
-
   gl.useProgram(program)
-
-
 
   let sphere = new Sphere(.9, 69)
 
-
-
   let buffers = WebGLHelper.initBuffers(gl, program, [{
-
     name: 'coordinates',
-
     size: 3,
-
     data: sphere.vertices
-
   }])
-
-
 
   let transformByLoc = gl.getUniformLocation(program, 'transformBy')
 
-
-
   let controls = {
-
     axis: 1,
-
     theta: 30,
-
     front: '#FF0000',
-
     back: '#00FF00',
-
     top: '#0000FF',
-
     bottom: '#FFFF00',
-
     left: '#FF00FF',
-
     right: '#00FFFF'
-
-
-
   }
-
-
 
   let theta = [30, 0, 30]
 
   function animate() {
-
     theta[controls.axis] += 0.5
 
-
-
     let rx = new THREE.Matrix4().makeRotationX(theta[0] * Math.PI / 180)
-
     let ry = new THREE.Matrix4().makeRotationY(theta[1] * Math.PI / 180)
-
     let rz = new THREE.Matrix4().makeRotationZ(theta[2] * Math.PI / 180)
-
-
-
     let ryz = new THREE.Matrix4().multiplyMatrices(ry, rz)
-
     let rxyz = new THREE.Matrix4().multiplyMatrices(rx, ryz)
-
-
 
     WebGLHelper.loadAttributeF(gl, program, 'color', 1, 0, 0)
 
-
-
     gl.uniformMatrix4fv(transformByLoc, false, rxyz.elements)
 
-
-
-    gl.drawArrays(gl.POINTS, 0, sphere.vertices.length / 3)
-
-
+    gl.drawArrays(gl.TRIANGLES, 0, sphere.vertices.length / 3)
 
     requestAnimationFrame(animate)
-
-  }
-
-
+    }
 
   animate()
 
-
-
   let gui = new dat.GUI()
-
-  document.querySelector('aside').appendChild(gui.domElement)
-
+    document.querySelector('aside').appendChild(gui.domElement)
   gui.add(controls, 'axis', { x: 0, y: 1, z: 2 })
-
 }
