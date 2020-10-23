@@ -9,8 +9,8 @@ document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 
 //Then: comes everything else
 // Shaders
-import vs_script from "../shaders/vertex-color.glsl"
-import fs_script from "../shaders/fragment-color.glsl"
+// import vs_script from "../shaders/vertex-color.glsl"
+// import fs_script from "../shaders/fragment-color.glsl"
 
 // JavaScript
 // import {scribble} from './week05'
@@ -34,7 +34,7 @@ import fs_script from "../shaders/fragment-color.glsl"
 // displayAnimatedCube()
 // displayCubeScene()
 
-import { displayMeshes } from './week09'
+import { displayMeshes } from './Week09'
 displayMeshes()
 
 
