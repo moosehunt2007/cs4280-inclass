@@ -19,9 +19,11 @@ function sombrero(R, C) {
 
     return data
 }
+
 function loadMeshGeometry(geometry, data, R, C, yscale = .1) {
     let x0 = 0, y0 = 0, z0 = 0
     let dx = 2, dz = 2
+    
 
     // Vertices
     for (let i = 0; i < R; i++) {
@@ -50,7 +52,6 @@ function loadMeshGeometry(geometry, data, R, C, yscale = .1) {
             ))
         }
     }
-
 }
 
 export function displayMeshes() {
@@ -68,7 +69,7 @@ export function displayMeshes() {
     // Adding the mesh
     let geometry = new THREE.Geometry()
 
-    //loadMeshGeometry(geometry, data256, 256, 256)
+    // loadMeshGeometry(geometry, data256, 256, 256)
     loadMeshGeometry(geometry, sombrero(64, 64), 64, 64, .1)
 
     geometry.computeFaceNormals()
