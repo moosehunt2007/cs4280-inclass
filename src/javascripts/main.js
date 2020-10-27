@@ -34,34 +34,37 @@ document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 // displayAnimatedCube()
 // displayCubeScene()
 
-import { displayMeshes } from './Week09'
-displayMeshes()
+// import { displayMeshes } from './Week09'
+// displayMeshes()
+
+import {displayTexturedScene} from './Week10'
+displayTexturedScene()
 
 
 
 
 
-import { WebGLHelper } from './webgl_helper'
+// import { WebGLHelper } from './webgl_helper'
 
-// displayColoredTriangles(vs_script, fs_script)
+// // displayColoredTriangles(vs_script, fs_script)
 
-export function displayColoredTriangles(vs_script, fs_script) {
-    let canvas = document.querySelector("#webgl-scene")
-    let gl = WebGLHelper.initWebGL(canvas)
+// export function displayColoredTriangles(vs_script, fs_script) {
+//     let canvas = document.querySelector("#webgl-scene")
+//     let gl = WebGLHelper.initWebGL(canvas)
 
-    let program = WebGLHelper.initShaders(gl, vs_script, fs_script)
-    gl.useProgram(program)
+//     let program = WebGLHelper.initShaders(gl, vs_script, fs_script)
+//     gl.useProgram(program)
 
-    WebGLHelper.initBuffers(gl, program, [{
-        name: 'coordinates',
-        size: 3,
-        data: [0, 0, 0, .5, .5, 0, .5, -.5, 0]
-    }, {
-        name: 'color',
-        size: 3,
-        data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
-    }])
+//     WebGLHelper.initBuffers(gl, program, [{
+//         name: 'coordinates',
+//         size: 3,
+//         data: [0, 0, 0, .5, .5, 0, .5, -.5, 0]
+//     }, {
+//         name: 'color',
+//         size: 3,
+//         data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+//     }])
 
-    WebGLHelper.clear(gl, [1.0, 1.0, 1.0, 1.0])
-    gl.drawArrays(gl.TRIANGLES, 0, 3)
-}
+//     WebGLHelper.clear(gl, [1.0, 1.0, 1.0, 1.0])
+//     gl.drawArrays(gl.TRIANGLES, 0, 3)
+// }
