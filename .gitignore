@@ -1,6 +1,7 @@
 # compiled output
 dist/*
 !dist/.keep
+!dist/additional_examples
 /tmp
 /out-tsc
 

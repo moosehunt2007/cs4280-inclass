@@ -40,7 +40,8 @@ document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 import {displayTexturedScene} from './Week10'
 displayTexturedScene()
 
-
+// import { displayCubeScene } from './Activity07'
+// displayCubeScene()
 
 
 
