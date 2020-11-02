@@ -38,7 +38,7 @@ export function displayCubeScene() {
                     box.position.y = j * 25
                     box.position.z = k * 25
 
-                    box.material = new THREE.MeshBasicMaterial()
+                    box.material = new THREE.MeshStandardMaterial()
                     box.material.color = new THREE.Color(Math.random(), Math.random(), Math.random())
                     scene.add(box)
                 }
@@ -58,11 +58,10 @@ export function displayCubeScene() {
     }
 
     // adding light sources
-    let ambientLight = new THREE.AmbientLight(0x666666)
-    let directionalLight = new THREE.DirectionalLight(0x777777)
-    let pointLight = new THREE.PointLight(0x999999)
-    cube.material = new THREE.MeshStandardMaterial(cube.materialParams)
-    // cube.material.map = textures[cube.name]
+    let ambientLight = new THREE.AmbientLight(0xffffff, 2)
+    let directionalLight = new THREE.DirectionalLight(0xffffff)
+    let pointLight = new THREE.PointLight(0xffffff)
+    cube.material = new THREE.MeshStandardMaterial(cube.materialParams)  
 
     scene.add(ambientLight)
     scene.add(directionalLight)
