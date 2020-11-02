@@ -37,11 +37,12 @@ document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 // import { displayMeshes } from './Week09'
 // displayMeshes()
 
-import {displayTexturedScene} from './Week10'
-displayTexturedScene()
+// import {displayTexturedScene, displayCity} from './Week10'
+// // displayTexturedScene()
+// displayCity()
 
-// import { displayCubeScene } from './Activity07'
-// displayCubeScene()
+import { displayCubeScene } from './Activity07'
+displayCubeScene()
 
 
 

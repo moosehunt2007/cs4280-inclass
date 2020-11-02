@@ -2,6 +2,7 @@
 dist/*
 !dist/.keep
 !dist/additional_examples
+!dist/models
 /tmp
 /out-tsc
 

@@ -161,7 +161,7 @@ export function displayCubeScene() {
     let scene = new THREE.Scene()
     let renderer = new THREE.WebGLRenderer({ canvas })
     let camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, .1, 1000)
-    // let camera = new THREE.OrthographicCamera(-20, 20, 24, -24, 10, -100)
+  
 
     renderer.setSize(canvas.clientWidth, canvas.clientHeight)
     renderer.setClearColor(0xEEEEEE)
@@ -174,11 +174,8 @@ export function displayCubeScene() {
 
     let cube = new THREE.Mesh(geometry, material)
 
-    // let geometry = new THREE.SphereBufferGeometry(50, 90, 90)
-    // let material = new THREE.MeshNormalMaterial({wireframe: false})
-    // let sphere = new THREE.Mesh(geometry, material)
-
-    // scene.add(sphere)
+   
+   
 
     // A 1000 cubes
     let cube_number = 10
@@ -195,19 +192,7 @@ export function displayCubeScene() {
                 box.material = new THREE.MeshBasicMaterial()
                 box.material.color = new THREE.Color(Math.random(), Math.random(), Math.random())
                 scene.add(box)
-               
-
-                    // // Adding a Sphere
-                    // geometry = new THREE.SphereGeometry(50, 90, 90)
-                    // material = new THREE.MeshNormalMaterial({ wireframe: false })
-                    // sphere = new THREE.Mesh(geometry, material)
-
-                   
-                    // sphere.position.X = i * .25
-                    // sphere.position.Y = j * .25
-                    // sphere.position.Z = k * .25
-                    // scene.add(sphere)
-                }
+                            }
             }
         }
     }
@@ -235,3 +220,22 @@ export function displayCubeScene() {
     gui.add(controls, 'theta').min(-1 * Math.Pi).max(Math.PI).onChange(animate)
     gui.add(controls, 'phi').min(-1 * Math.Pi).max(Math.PI).onChange(animate)
 }
+
+
+  // let camera = new THREE.OrthographicCamera(-20, 20, 24, -24, 10, -100)
+ // scene.add(sphere)
+ // let geometry = new THREE.SphereBufferGeometry(50, 90, 90)
+    // let material = new THREE.MeshNormalMaterial({wireframe: false})
+    // let sphere = new THREE.Mesh(geometry, material)
+
+
+                    // // Adding a Sphere
+                    // geometry = new THREE.SphereGeometry(50, 90, 90)
+                    // material = new THREE.MeshNormalMaterial({ wireframe: false })
+                    // sphere = new THREE.Mesh(geometry, material)
+
+
+                    // sphere.position.X = i * .25
+                    // sphere.position.Y = j * .25
+                    // sphere.position.Z = k * .25
+                    // scene.add(sphere)

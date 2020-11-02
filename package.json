@@ -30,6 +30,7 @@
   "dependencies": {
     "d3": "^5.16.0",
     "dat.gui": "^0.7.7",
-    "three": "^0.120.1"
+    "three": "^0.120.1",
+    "three-obj-mtl-loader": "^1.0.3"
   }
 }
