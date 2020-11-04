@@ -44,8 +44,11 @@ document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 // import { displayCubeScene } from './Activity07'
 // displayCubeScene()
 
-import {displayTexturedScene, displayCity} from './week11'
-displayCity()
+import { displayTexturedScene, displayCity, displaySolar, displayCubes, displayTexturedScene2} from './week11'
+//displayCity()
+// displaySolar()
+// displayCubes()
+displayTexturedScene2()
 
 // import { WebGLHelper } from './webgl_helper'
 
