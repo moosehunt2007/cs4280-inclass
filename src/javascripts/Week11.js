@@ -109,9 +109,9 @@ export function displayTexturedScene2() {
 
     let waterGeometry = new THREE.PlaneBufferGeometry(500, 300)
     let water = new Water(waterGeometry, {
-        color: '#000FFF',
+        color: '#33FCFF',
         scale: 4,
-        flowDirection: new THREE.Vector2(10, 1),
+        flowDirection: new THREE.Vector2(20, 1),
         textureWidth: 1024,
         textureHeight: 1024,
         normalMap0: textures['water1'],
