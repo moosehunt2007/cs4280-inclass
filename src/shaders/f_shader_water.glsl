@@ -4,7 +4,7 @@ uniform vec2 iResolution;
 const int NUM_STEPS = 8;
 const float PI	 	= 3.1415;
 const float EPSILON	= 1e-3;
-float EPSILON_NRM	= 0.1 / iResolution.x;
+float EPSILON_NRM;
 
 // sea variables
 const int ITER_GEOMETRY = 3;
@@ -15,7 +15,7 @@ const float SEA_SPEED = 1.0;
 const float SEA_FREQ = 0.16;
 const vec3 SEA_BASE = vec3(0.1,0.19,0.22);
 const vec3 SEA_WATER_COLOR = vec3(0.8,0.9,0.6);
-float SEA_TIME = iGlobalTime * SEA_SPEED;
+float SEA_TIME;
 mat2 octave_m = mat2(1.6,1.2,-1.2,1.6);
 
 mat3 fromEuler(vec3 ang) {
@@ -184,6 +184,8 @@ float heightMapTracing(vec3 ori, vec3 dir, out vec3 p) {
 }
 
 void main() {
+  EPSILON_NRM	= 0.1 / iResolution.x;
+  SEA_TIME = iGlobalTime * SEA_SPEED;
   vec2 uv = gl_FragCoord.xy / iResolution.xy;
   uv = uv * 2.0 - 1.0;
   uv.x *= iResolution.x / iResolution.y;    

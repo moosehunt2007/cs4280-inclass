@@ -41,8 +41,20 @@ document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 // // displayTexturedScene()
 // displayCity()
 
-import { displayCubeScene } from './Activity08'
-displayCubeScene()
+// import { displayCubeScene } from './Activity08'
+// displayCubeScene()
+
+// import {displayTexturedScene2} from './Week12'
+// displayTexturedScene2()
+// import {displayOcean} from './Week12'
+// displayOcean()
+
+// import {displayScene} from './Week12-physics'
+// displayScene()
+
+import {displayPath} from './Week12-path'
+displayPath()
+
 
 // import { displayTexturedScene, displayCity, displaySolar, displayCubes, displayTexturedScene2} from './week11'
 // //displayCity()

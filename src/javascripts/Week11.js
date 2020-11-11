@@ -111,7 +111,7 @@ export function displayTexturedScene2() {
     let water = new Water(waterGeometry, {
         color: '#33FCFF',
         scale: 4,
-        flowDirection: new THREE.Vector2(20, 1),
+        flowDirection: new THREE.Vector2(4, 1),
         textureWidth: 1024,
         textureHeight: 1024,
         normalMap0: textures['water1'],
