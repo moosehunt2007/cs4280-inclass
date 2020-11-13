@@ -24,10 +24,13 @@ export function displayCity() {
             for (let o of city.children) {
                 let c = new THREE.Color(0xFFFFFF)
                 c.setHex(Math.random() * 0xFFFFFF)
-                o.material = new THREE.MeshStandardMaterial({ color: c })
+                o.material = new THREE.MeshPhongMaterial({ color: c })
+                o.receiveShadow = true
+                o.castShadow = true
                 scene.add(o)
             }
 
+            city.receiveShadow = true
             scene.add(city)
             renderer.render(city, camera)
         })
@@ -39,22 +42,34 @@ export function displayCity() {
     })
 
     // adding light sources
-    let ambientLight = new THREE.AmbientLight(0x333333)
-    let directionalLight = new THREE.DirectionalLight(0x777777)
-    let pointLight = new THREE.PointLight(0x999999)
-    // pointLight.position.set(0, 300, 0)
-    let spotLight = new THREE.SpotLight(0x999999)
-    // spotLight.position.set(0, 200, 0)
-    spotLight.castShadow = true
+    // let ambient = new THREE.AmbientLight(0xf3d950, 1)
+    // scene.add(ambient)
 
-    scene.add(ambientLight)
-    scene.add(directionalLight)
-    scene.add(pointLight)
+    let point = new THREE.PointLight(0xf3d940, .8, 300, 1)
+    // point.position.set(-500, -500, 0)
+    scene.add(point)
+
+    let directional = new THREE.DirectionalLight(0xf3d950, 2)
+    // directional.position.set(200, 200, 50)
+    directional.castShadow = true
+    scene.add(directional)
+
+    let spotLight = new THREE.SpotLight(0xfaf4df, 1.5)
+    spotLight.position.set(70, 300, 0)
+    spotLight.angle = 0.6
+    spotLight.penumbra = .2
+    spotLight.decay = 1
+    spotLight.distance = 500000
+
+    spotLight.castShadow = true
+    spotLight.shadow.mapSize.width = canvas.clientWidth
+    spotLight.shadow.mapSize.height = canvas.clientHeight
+    spotLight.shadow.camera.near = 10
+    spotLight.shadow.camera.far = 500
+    spotLight.shadow.focus = .6
     scene.add(spotLight)
 
-    let controls = {
-
-    }
+    let controls = {}
 
     window.onkeyup = function (e) {
         let t = cameraControls.target
@@ -76,12 +91,16 @@ export function displayCity() {
     camera.position.set(-200, 400, -200)
 
     function animate() {
-
+       
         camera.lookAt(scene.position)
         renderer.render(scene, camera)
         cameraControls.update()
+
+        lightHelper.update();
+
+        shadowCameraHelper.update();
+
     }
 
     animate()
-
 }

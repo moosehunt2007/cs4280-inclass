@@ -52,8 +52,11 @@ document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 // import {displayScene} from './Week12-physics'
 // displayScene()
 
-import {displayPath} from './Week12-path'
-displayPath()
+// import {displayPath} from './Week12-path'
+// displayPath()
+
+import {displayCity} from './Activity09'
+displayCity()
 
 
 // import { displayTexturedScene, displayCity, displaySolar, displayCubes, displayTexturedScene2} from './week11'

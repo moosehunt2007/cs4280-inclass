@@ -116,13 +116,13 @@ export function displayScene() {
                 obj.__dirtyRotation = true
             } 
 
-            // if (obj == ball) {
-            //     obj.position.y -= -30
-            //     obj.position.x += Math.random() * 5
-            //     obj.position.z += Math.random() * 7
-            //     obj.__dirtyPosition = true
-            //     obj.__dirtyRotation = true
-            // }
+            if (obj == ball) {
+                obj.position.y -= -30
+                obj.position.x += Math.random() * 5
+                obj.position.z += Math.random() * 7
+                obj.__dirtyPosition = true
+                obj.__dirtyRotation = true
+            }
 
             break
         }
