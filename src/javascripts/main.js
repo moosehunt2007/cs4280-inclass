@@ -55,14 +55,18 @@ document.querySelector('#std_name').innerHTML = `<strong>${std_name}</strong>`
 // import {displayPath} from './Week12-path'
 // displayPath()
 
-import {displayCity} from './Activity09'
-displayCity()
+// import {displayCity} from './Activity09'
+// displayCity()
+
+import {displayTexturedScene2} from './Activity10'
+displayTexturedScene2()
+
 
 
 // import { displayTexturedScene, displayCity, displaySolar, displayCubes, displayTexturedScene2} from './week11'
-// //displayCity()
-// // displaySolar()
-// // displayCubes()
+// // //displayCity()
+// // // displaySolar()
+// // // displayCubes()
 // displayTexturedScene2()
 
 // import { WebGLHelper } from './webgl_helper'

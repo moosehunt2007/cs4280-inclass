@@ -36,10 +36,10 @@ export function checkerboard(width, height, R_DIVS = 8, C_DIVS = 8) {
         for (let j = 0; j < height; j++) {
             let cy = Math.floor(j / dy)
             let c = (cx % 2 !== cy % 2) ? 255 : 0            
-            texels[4 * i * width + 4 * j] = c;
-            texels[4 * i * width + 4 * j + 1] = c;
-            texels[4 * i * height + 4 * j + 2] = c;
-            texels[4 * i * height + 4 * j + 3] = c;
+            texels[3 * i * width + 3 * j] = c;
+            texels[3 * i * width + 3 * j + 1] = c;
+            texels[3 * i * height + 3 * j + 2] = c;
+            texels[3 * i * height + 3 * j + 3] = c;
         }
     }
 

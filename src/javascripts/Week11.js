@@ -87,14 +87,14 @@ export function displayTexturedScene2() {
     cube.material = new THREE.MeshStandardMaterial(cube.materialParams)
     cube.material.map = textures[cube.name]
 
-    // // Add cube on other corner
-    // cube = new THREE.Mesh(geometry)
-    // cube.materialParams = {}
-    // cube.position.set(50, 50, 50)
-    // cube.name = 'somePattern'
-    // scene.add(cube)
-    // cube.material = new THREE.MeshStandardMaterial(cube.materialParams)
-    // cube.material.map = textures[cube.name]
+    // Add cube on other corner
+    cube = new THREE.Mesh(geometry)
+    cube.materialParams = {}
+    cube.position.set(-50, 50, 50)
+    cube.name = 'somePattern'
+    scene.add(cube)
+    cube.material = new THREE.MeshStandardMaterial(cube.materialParams)
+    cube.material.map = textures[cube.name]
 
     // Adding the Floor
     geometry = new THREE.PlaneGeometry(500, 300)
